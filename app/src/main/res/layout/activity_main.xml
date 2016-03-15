@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#00B0FF"
 
     tools:context="com.example.student119.lab02_01_interactive.MainActivity">
 
@@ -17,6 +18,7 @@
         android:layout_marginBottom="16dp"
         android:text="Quantity"
         android:textAllCaps="true"
+        android:textColor="#76FF03"
         />
     <LinearLayout
         android:layout_width="wrap_content"
@@ -24,10 +26,11 @@
         android:orientation="horizontal">
 
     <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:text="+"
         android:onClick="increment"
+        android:textColor="#1A237E"
         />
 
     <TextView
@@ -38,15 +41,16 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:text="0"
-        android:textColor="@android:color/black"
+        android:textColor="#E65100"
         android:textSize="16sp"
         />
 
     <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:onClick="decrement"
         android:text="-"
+        android:textColor="#D500F9"
         />
     </LinearLayout>
 
@@ -60,6 +64,7 @@
         android:text="Price"
         android:textAllCaps="true"
         android:textSize="16sp"
+        android:textColor="#FFFF00"
 
         />
 
@@ -70,7 +75,7 @@
         android:layout_marginBottom="16dp"
         android:text="NT$0"
         android:textAllCaps="true"
-        android:textColor="@android:color/black"
+        android:textColor="#6200EA"
         android:textSize="16sp"
         />
     <Button
@@ -78,6 +83,7 @@
         android:layout_height="wrap_content"
         android:onClick="submitOrder"
         android:text="Order"
+        android:textColor="#E91E63"
 
         />
 </LinearLayout>

@@ -5,11 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
-
 public class MainActivity extends AppCompatActivity {
+
     private int mQuantity = 0;
-    private int mPrice = 5 ;
+    private int mPrice = 100 ;
+    private final String mNT$ = "NT$";
+    private StringBuilder mTotalPriceMessage = new StringBuilder(mNT$);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,18 +23,21 @@ public class MainActivity extends AppCompatActivity {
     public  void submitOrder(View view) {
         displayTotalPrice();
     }
+    private void displayTotalPrice(){
+        TextView priceTextView = (TextView)findViewById(R.id.price_text_view);
+        int total = mPrice * mQuantity;
+        int startIndex = mNT$.length();
+        int endIndex = mTotalPriceMessage.length();
+        mTotalPriceMessage.delete(startIndex,endIndex).append(total)
+                .append(mQuantity ==0 ? "\nFree" : "\nThank you !");
+        priceTextView.setText( mTotalPriceMessage);
+    }
     private void displayQuantity() {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText(String.valueOf(mQuantity));
     }
 
-    private void displayTotalPrice(){
-        TextView priceTextView = (TextView)findViewById(R.id.price_text_view);
-        int total = mPrice * mQuantity;
-        String myString= NumberFormat.getCurrencyInstance().format(total);
-        String message = myString + (mQuantity ==0 ? "\nFree" : "\nThank you !");
-        priceTextView.setText(myString);
-    }
+
     public void increment(View view){
         ++mQuantity;
         displayQuantity();
